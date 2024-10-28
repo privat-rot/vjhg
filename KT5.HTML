@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Машинка</title>
+    <style> 
+     body {
+        margin: 0;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100vh;
+        background: skyblue;
+    }
+
+    .road {
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background: gray;
+        bottom: 0;
+        box-shadow: inset 0 -5px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .car {
+        position: absolute;
+        width: 200px;
+        height: 50px;
+        background: red;
+        border-radius: 10px;
+        bottom: 100px; /* Расположение машины над дорогой */
+        animation: drive 3s forwards; /* Анимация движения */
+    }
+
+    .wheel {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: black;
+        border-radius: 50%;
+        bottom: -15px; /* Устанавливаем колеса ниже машины */
+    }
+
+    .wheel.left {
+        left: 20px; /* Левое колесо */
+    }
+
+    .wheel.right {
+        right: 20px; /* Правое колесо */
+    }
+
+    @keyframes drive {
+        from {
+            left: -200px; /* Начальная позиция выезда */
+        }
+        to {
+            left: calc(100% - 250px); /* Конечная позиция */
+        }
+    }
+
+    .sun {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background: yellow;
+        border-radius: 50%;
+        top: 20px;
+        left: 20px;
+        box-shadow: 0 0 15px rgba(255, 255, 0, 0.7);
+    }  
+    </style>
+</head>
+<body>
+
+    <div class="sun"></div>
+    <div class="road"></div>
+    <div class="car">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+    </div>
+
+</body>
+</html>
