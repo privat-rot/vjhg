@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: width 0.5s, height 0.5s; /* Плавный переход */
+}
+
+.mode-selector {
+  margin-bottom: 20px;
+}
+
+.grid-repeater {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.grid-repeater1 {
+  display: grid;
+  grid-gap: 1200px;
+}
+
+/* Режим для ПК */
+@media (min-width: 1200px) {
+  .grid-repeater {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Режим для ноутбука */
+@media (min-width: 900px) {
+  .grid-repeater {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Режим для телефона */
+@media (max-width: 700px) {
+  .grid-repeater {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.item {
+  background-color: #dfe1dd;
+  border: 5px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.number {
+  font-size: 100px;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+.content {
+  font-size: 30px;
+  color: #666;
+}
+
+.number1 {
+  background-color: #866868;
+  
+  font-size: 100px;
+  font-weight: bold;
+  margin-bottom: 520px;
+}
