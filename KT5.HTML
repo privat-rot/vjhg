@@ -2,7 +2,6 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Машинка</title>
     <style> 
      body {
@@ -31,7 +30,7 @@
         background: red;
         border-radius: 10px;
         bottom: 100px; /* Расположение машины над дорогой */
-        animation: drive 3s forwards; /* Анимация движения */
+        animation: drive 10s forwards; /* Анимация движения */
     }
 
     .wheel {
@@ -41,6 +40,36 @@
         background: black;
         border-radius: 50%;
         bottom: -15px; /* Устанавливаем колеса ниже машины */
+    }
+
+    .disks {
+        position: absolute;
+        width: 15px;
+        height: 5px;
+        background: rgb(207, 184, 184);
+        border-radius: 50%;
+        bottom: 10px;
+        left: 7px;
+        animation: rotate 10s forwards;
+    }
+
+    .taillight{
+        position: absolute;
+        width: 7px;
+        height: 10px;
+        background: rgb(62, 189, 121);
+        bottom: 7px;
+        animation-name: background;
+        animation-duration: 4s;
+        animation-iteration-count: 4;   
+    }
+    
+    .light{
+  border-left: 200px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 35px solid rgb(248, 239, 4);
+  position: relative;
+  right: -200px
     }
 
     .wheel.left {
@@ -57,6 +86,22 @@
         }
         to {
             left: calc(100% - 250px); /* Конечная позиция */
+        }
+    }
+    @keyframes background{
+        from{
+            background: rgb(120, 84, 84);
+        }
+        to{
+            background: rgb(22, 237, 227);
+        } 
+    }
+    @keyframes rotate{
+        from{
+            transform: rotate(0deg)
+        }
+        to{
+            transform: rotate(1440deg)
         }
     }
 
@@ -77,8 +122,17 @@
     <div class="sun"></div>
     <div class="road"></div>
     <div class="car">
-        <div class="wheel left"></div>
-        <div class="wheel right"></div>
+        <div class="wheel left">
+            <div class="disks left"></div>
+        </div>
+        <div class="wheel right">
+            <div class="disks right"></div>
+        </div>
+        <div class="taillight"></div>
+        <div class="light"></div>
+        
+       
+
     </div>
 
 </body>
